@@ -6,28 +6,20 @@ import { FaQrcode } from "react-icons/fa";
 import QRCodeSample from '../assets/qrsample.png';
 import QRCode from 'react-qr-code';
 import axios from "axios";
-import useSWR from 'swr';
 
 export default function Beranda() {
 
+  const [Checkpoint, setCheckpoint] = useState([]);
   const location = useLocation();
 
-  const fetcher =
-  axios
-    .get(`https://localhost:7001/api/Register/Getbyid/${location.state.idcheck}`)
-    .then((result) => {
-      console.log(result.data);
-      // setPosts(result.data);
-    });
-    
-
-  const {data} = useSWR(`https://localhost:7001/api/Register/Getbyid/${location.state.idcheck}`, fetcher)
-  
-  console.log(data);
-
-  // useEffect(() => {
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`https://localhost:7001/api/Register/Getbyid/${location.state.idcheck}`)
+      .then((result) => {
+        console.log(result.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
 
   // console.log(location.state);

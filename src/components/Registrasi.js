@@ -41,7 +41,7 @@ export default function Registrasi() {
     
     .then((response) => {
       // Handle response
-      console.log(response);
+      // console.log(response); 
       Navigate("/beranda", {
         state:{
           idcheck: response.data.idCheckpoint,
