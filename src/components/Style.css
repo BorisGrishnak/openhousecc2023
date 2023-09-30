@@ -1,0 +1,76 @@
+/* Navbar */
+.NavbarSt {
+    background-color: #D9D9D970;
+}
+
+
+/* Register */
+
+.registrasi {
+    background-image: url('../assets/cc1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+#ttl {
+    font-weight: 700;
+}
+
+#cardreg {
+    background-color: #ffffffe5;
+    border-radius: 25px;
+    margin-top: 120px;
+    margin-bottom: 106px;
+}
+
+#formreg {
+    background-color: #D9D9D9;
+    border-width: 1px;
+    border-color: black;
+}
+
+#btnReg {
+    background-color: #FDCD04;
+    color: #000000;
+    border-color: #000000;
+    font-weight: 500;
+}
+
+
+/* Beranda */
+.beranda {
+    height: 100%;
+    background-color: #FDFD96;
+}
+
+.qrdiv {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+#btnStation {
+    /* border-color: #000000; */
+    background-color: #D9D9D9;
+    color: #000000;
+    border-radius: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+#btnStationAct {
+    border-color: #000000;
+    background-color: greenyellow;
+    color: #000000;
+    border-radius: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.TextData {
+    margin-bottom: 90px;
+}
