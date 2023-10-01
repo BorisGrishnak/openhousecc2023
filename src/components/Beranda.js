@@ -10,6 +10,9 @@ import axios from "axios";
 export default function Beranda() {
 
   const [Expose, setExpose] = useState('');
+  const [Force, setForce] = useState('');
+  const [BTS, setBTS] = useState('');
+  const [UTC, setUTC] = useState('');
   const location = useLocation();
 
   useEffect(() => {
@@ -17,6 +20,9 @@ export default function Beranda() {
       .get(`https://localhost:7001/api/Register/Getbyid/${location.state.idcheck}`)
       .then((result) => {
         setExpose(result.data.expose)
+        setForce(result.data.force)
+        setBTS(result.data.bts)
+        setUTC(result.data.utc)
         // console.log(result.data);
       })
       .catch((error) => console.log(error));
@@ -56,7 +62,7 @@ export default function Beranda() {
                     </div>
                     <div className="col-3 text-center">
                         {(function() {
-                          if (location.state.force === 1) {
+                          if (Force === true) {
                             return <Button variant="success" id="btnStationAct">2</Button>;
                           } else {
                             return <Button variant="secondary" id="btnStation">2</Button>;
@@ -65,7 +71,7 @@ export default function Beranda() {
                     </div>
                     <div className="col-3 text-center">
                         {(function() {
-                          if (location.state.bts === 1) {
+                          if (BTS === true) {
                             return <Button variant="success" id="btnStationAct">3</Button>;
                           } else {
                             return <Button variant="secondary" id="btnStation">3</Button>;
@@ -74,7 +80,7 @@ export default function Beranda() {
                     </div>
                     <div className="col-3 text-center">
                         {(function() {
-                          if (location.state.utc === 1) {
+                          if (UTC === true) {
                             return <Button variant="success" id="btnStationAct">4</Button>;
                           } else {
                             return <Button variant="secondary" id="btnStation">4</Button>;
