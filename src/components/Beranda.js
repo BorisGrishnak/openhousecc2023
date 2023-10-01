@@ -9,19 +9,20 @@ import axios from "axios";
 
 export default function Beranda() {
 
-  const [Checkpoint, setCheckpoint] = useState([]);
+  const [Expose, setExpose] = useState('');
   const location = useLocation();
 
   useEffect(() => {
     axios
       .get(`https://localhost:7001/api/Register/Getbyid/${location.state.idcheck}`)
       .then((result) => {
-        console.log(result.data);
+        setExpose(result.data.expose)
+        // console.log(result.data);
       })
       .catch((error) => console.log(error));
   }, []);
 
-
+  console.log(Expose)
   // console.log(location.state);
   return (
     <>
@@ -46,7 +47,7 @@ export default function Beranda() {
                 <div className="row">
                     <div className="col-3 text-center">
                         {(function() {
-                          if (location.state.expose === true) {
+                          if (Expose === true) {
                             return <Button variant="success" id="btnStationAct">1</Button>;
                           } else {
                             return <Button variant="secondary" id="btnStation">1</Button>;
