@@ -22,13 +22,13 @@ export default function Beranda() {
         setExpose(result.data.expose)
         setForce(result.data.force)
         setBTS(result.data.bts)
-        setUTC(result.data.utc)
+        setUTC(result.data.utCall)
         // console.log(result.data);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(Expose)
+  // console.log(Expose)
   // console.log(location.state);
   return (
     <>
@@ -44,10 +44,10 @@ export default function Beranda() {
                 )}
                 
                 {/* <img src={QRCodeSample} style={{width: 250}}></img> */}
-                <h4 className="mt-3">UID : {location.state.id}</h4>
+                <h4 className="mt-3" style={{backgroundColor: '#D9D9D9'}}>UID : {location.state.id}</h4>
             </div>
-            <div className="TextData text-center">
-                <h2>Nama : {location.state.nama}</h2>
+            <div className="TextData text-center" >
+                <h2 style={{backgroundColor: '#D9D9D9'}}>Nama : {location.state.nama}</h2>
             </div>
             <div className="station">
                 <div className="row">

@@ -5,6 +5,7 @@ import Expose from './Expose';
 import Force from './Force';
 import BTS from './BTS';
 import UTC from './UTC';
+import Dashboard from './Dashboard';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/force' element={<Force/>}/>
       <Route path='/bts' element={<BTS/>}/>
       <Route path='/utc' element={<UTC/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
     </Routes>
   )
 }

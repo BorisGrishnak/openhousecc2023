@@ -3,6 +3,10 @@
     background-color: #D9D9D970;
 }
 
+.NavbarDs {
+    background-color: #D9D9D970;
+}
+
 
 /* Register */
 
@@ -41,7 +45,10 @@
 /* Beranda */
 .beranda {
     height: 100%;
-    background-color: #FDFD96;
+    background-image: url('../assets/bgspoor.jpeg');
+    background-size: cover;
+    background-position-x: -850px;
+    background-repeat: no-repeat;
 }
 
 .qrdiv {
@@ -74,3 +81,14 @@
 .TextData {
     margin-bottom: 90px;
 }
+
+
+/* Dashboard */
+.dashboard {
+    height: 100vh;
+    background-image: url('../assets/bilo.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+/* /Dashboard */

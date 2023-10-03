@@ -102,7 +102,7 @@ export default function Registrasi() {
                 value={Kantor}
                 onChange={e => setKantor(e.target.value)}
                 type="text"
-                placeholder="Site/Cabang/Divisi"
+                placeholder="ci"
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
