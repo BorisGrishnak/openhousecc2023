@@ -47,14 +47,14 @@ export default function Dashboard() {
                 <div className="col-4">
                   <Card>
                     <Card.Body>
-                      <h6>Jumlah Pengunjung Selesai</h6>
+                      <h6>Jumlah Pengunjung Hari Ini</h6>
                     </Card.Body>
                   </Card>
                 </div>
                 <div className="col-4">
                   <Card>
                     <Card.Body>
-                      <h6>Jumlah Pengunjung Hari Ini</h6>
+                      <h6>Jumlah Pengunjung Selesai</h6>
                     </Card.Body>
                   </Card>
                 </div>
@@ -76,16 +76,16 @@ export default function Dashboard() {
                   <table className="table table-bordered mt-5">
                     <thead>
                       <tr>
-                        <th scope="col">No.</th>
-                        <th>Nama</th>
-                        <th>No.HP</th>
-                        <th>Site/Cabang/Divisi</th>
+                        <th scope="col" style={{backgroundColor: "#FDCD04"}}>No.</th>
+                        <th style={{backgroundColor: "#FDCD04"}}>Nama</th>
+                        <th style={{backgroundColor: "#FDCD04"}}>No.HP</th>
+                        <th style={{backgroundColor: "#FDCD04"}}>Site/Cabang/Divisi</th>
                       </tr>
                     </thead>
                     <tbody>
                       {data.map((png) => (
                         <tr key={png.idPengunjung}>
-                          <td><h6>1.</h6></td>
+                          <td><h6>{png.idCheckpoint}</h6></td>
                           <td>{png.Nama}</td>
                           <td>{png.NoHP}</td>
                           <td>{png.Kantor}</td>
