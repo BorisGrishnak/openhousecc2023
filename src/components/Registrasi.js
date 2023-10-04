@@ -91,7 +91,7 @@ export default function Registrasi() {
                 name="NoHP"
                 value={NoHP}
                 onChange={e => setNoHP(e.target.value)}
-                type="text"
+                type="number"
                 placeholder="No. Handphone"
               />
               <Form.Label className="mt-3">Site/Cabang/Divisi</Form.Label>
@@ -102,7 +102,7 @@ export default function Registrasi() {
                 value={Kantor}
                 onChange={e => setKantor(e.target.value)}
                 type="text"
-                placeholder="ci"
+                placeholder="Site/Cabang/Divisi"
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button, Table } from "react-bootstrap";
 import {ExportExcel} from "./ExportToExcel";
 import HeaderDesktop from "./HeaderDesktop";
 import axios from "axios";  
@@ -8,6 +8,9 @@ export default function Dashboard() {
 
   const [data, setData] = React.useState([])
   const fileName = "Rekap Pengunjung Openhouse Command Center 2023";
+
+  const current = new Date();
+  const now = `${current.getFullYear()}-${current.getMonth()+1}-${current.getDate()}`;
 
   React.useEffect(() => {
     const fetchData = () =>{
@@ -19,16 +22,32 @@ export default function Dashboard() {
        "Nama": item.nama,
        "NoHP": item.noHP,
        "Kantor": item.kantor,
+       "Expose": item.expose,
+       "Force": item.force,
+       "BTS": item.bts,
+       "UTC": item.utCall,
+       "CreatedAt": item.createdAt,
      }))
-    //  console.log(customHeadings);
-      setData(customHeadings) 
+     setData(customHeadings) 
+      // console.log(data.CreatedAt);
      })
     }
     fetchData()
-  }, [])
+  }, [])  
 
   const countData = data.length;
-  
+
+  const doneDataRaw = data.filter( data =>
+    data.Expose === true &&
+    data.Force === true &&
+    data.BTS === true &&
+    data.UTC === true 
+  );
+
+  const doneData = doneDataRaw.length;
+
+  console.log(doneData);
+
   return (
     <>
     <div className='dashboard'>
@@ -40,7 +59,7 @@ export default function Dashboard() {
                   <Card>
                     <Card.Body>
                       <h6>Jumlah Pengunjung</h6>
-                      <h6>{countData}</h6>
+                      <h4>{countData}</h4>
                     </Card.Body>
                   </Card>
                 </div>
@@ -48,6 +67,7 @@ export default function Dashboard() {
                   <Card>
                     <Card.Body>
                       <h6>Jumlah Pengunjung Hari Ini</h6>
+                      <h4>1</h4>
                     </Card.Body>
                   </Card>
                 </div>
@@ -55,6 +75,7 @@ export default function Dashboard() {
                   <Card>
                     <Card.Body>
                       <h6>Jumlah Pengunjung Selesai</h6>
+                      <h4>{doneData}</h4>
                     </Card.Body>
                   </Card>
                 </div>
@@ -80,15 +101,57 @@ export default function Dashboard() {
                         <th style={{backgroundColor: "#FDCD04"}}>Nama</th>
                         <th style={{backgroundColor: "#FDCD04"}}>No.HP</th>
                         <th style={{backgroundColor: "#FDCD04"}}>Site/Cabang/Divisi</th>
+                        <th style={{backgroundColor: "#FDCD04"}}></th>
+                        <th style={{backgroundColor: "#FDCD04"}}>Expose</th>
+                        <th style={{backgroundColor: "#FDCD04"}}>Force</th>
+                        <th style={{backgroundColor: "#FDCD04"}}>BTS</th>
+                        <th style={{backgroundColor: "#FDCD04"}}>UT Call</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {data.map((png) => (
-                        <tr key={png.idPengunjung}>
-                          <td><h6>{png.idCheckpoint}</h6></td>
+                      {data.map((png, index) => (
+                        <tr key={index}>
+                          <td><h6>{index + 1}.</h6></td>
                           <td>{png.Nama}</td>
                           <td>{png.NoHP}</td>
                           <td>{png.Kantor}</td>
+                          <td style={{backgroundColor: "#FDCD04"}}></td>
+                          <td>
+                            {(function() {
+                              if (png.Expose === true) {
+                                return <Button variant="success" id="btnStationAct"></Button>;
+                              } else {
+                                return <Button variant="secondary" id="btnStation"></Button>;
+                              }
+                            })()}
+                          </td>
+                          <td>
+                            {(function() {
+                              if (png.Force === true) {
+                                return <Button variant="success" id="btnStationAct"></Button>;
+                              } else {
+                                return <Button variant="secondary" id="btnStation"></Button>;
+                              }
+                            })()}
+                          </td>
+                          <td>
+                            {(function() {
+                              if (png.BTS === true) {
+                                return <Button variant="success" id="btnStationAct"></Button>;
+                              } else {
+                                return <Button variant="secondary" id="btnStation"></Button>;
+                              }
+                            })()}
+                          </td>
+                          <td>
+                            {(function() {
+                              if (png.UTC === true) {
+                                return <Button variant="success" id="btnStationAct"></Button>;
+                              } else {
+                                return <Button variant="secondary" id="btnStation"></Button>;
+                              }
+                            })()}
+                          </td>
                         </tr>
                       ))}
                     </tbody>

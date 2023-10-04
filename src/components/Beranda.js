@@ -35,7 +35,7 @@ export default function Beranda() {
     <div className='beranda'>
         <Header/>
         <div className="container">
-            <div className="qrdiv text-center">
+            <div className="qrdiv text-center pt-3" style={{backgroundColor: "blueviolet"}}>
                 {location.state.id && (
                     <QRCode
                         title="QR Pengunjung"

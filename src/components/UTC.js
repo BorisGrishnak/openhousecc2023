@@ -22,7 +22,7 @@ class UTC extends Component {
         
         return (
           <>
-          <div className='beranda'>
+          <div className='scanner'>
               <Header/>
               <div className="container">
                   <div className="qrdiv text-center ms-3">

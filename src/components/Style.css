@@ -47,7 +47,7 @@
     height: 100%;
     background-image: url('../assets/bgspoor.jpeg');
     background-size: cover;
-    background-position-x: -850px;
+    background-position-x: right;
     background-repeat: no-repeat;
 }
 
@@ -92,3 +92,14 @@
     background-position-y: center;
 }
 /* /Dashboard */
+
+
+/* Scanner */
+.scanner {
+    height: 100%;
+    background-image: url('../assets/bgspoor.jpeg');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+/* /Scanner */
