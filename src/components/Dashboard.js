@@ -26,7 +26,7 @@ export default function Dashboard() {
        "Force": item.force,
        "BTS": item.bts,
        "UTC": item.utCall,
-       "CreatedAt": item.createdAt,
+      //  "CreatedAt": item.createdAt,
      }))
      setData(customHeadings) 
       // console.log(data.CreatedAt);
