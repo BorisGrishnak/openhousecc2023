@@ -9,7 +9,7 @@ import Dashboard from './Dashboard';
 
 function App() {
   return (
-    <Routes>
+    <Routes> 
       <Route path='/' element={<Registrasi/>}/>
       <Route path='/beranda' element={<Beranda/>}/>
       <Route path='/expose' element={<Expose/>}/>
