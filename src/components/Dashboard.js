@@ -7,6 +7,7 @@ import axios from "axios";
 export default function Dashboard() {
 
   const [data, setData] = React.useState([])
+  const [xlsxdata, setXlsxData] = React.useState([])
   const fileName = "Rekap Pengunjung Openhouse Command Center 2023";
 
   const current = new Date();
@@ -14,7 +15,7 @@ export default function Dashboard() {
 
   React.useEffect(() => {
     const fetchData = () =>{
-     axios.get('https://localhost:7001/api/Admin').then(postData => {
+     axios.get('https://openhousewebapi.azurewebsites.net/api/Admin').then(postData => {
 
      // reshaping the array
      const customHeadings = postData.data.map(item=>({
@@ -28,7 +29,15 @@ export default function Dashboard() {
        "UTC": item.utCall,
       //  "CreatedAt": item.createdAt,
      }))
+     const xlsxData = postData.data.map(item=>({
+       "idPengunjung": item.idPengunjung,
+       "Nama": item.nama,
+       "NoHP": item.noHP,
+       "Kantor": item.kantor
+      //  "CreatedAt": item.createdAt,
+     }))
      setData(customHeadings) 
+     setXlsxData(xlsxData) 
       // console.log(data.CreatedAt);
      })
     }
@@ -90,7 +99,7 @@ export default function Dashboard() {
                     </div>
                     <div className="col-2">
                       {/* <div className="me-5"> */}
-                        <ExportExcel apiData={data} fileName={fileName}></ExportExcel>
+                        <ExportExcel apiData={xlsxdata} fileName={fileName}></ExportExcel>
                       {/* </div> */}
                     </div>
                   </div>

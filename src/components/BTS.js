@@ -49,7 +49,7 @@ class BTS extends Component {
     
     onNewScanResult(decodedText, decodedResult) {
         console.log(decodedResult.decodedText);
-        axios.patch(`https://localhost:7001/api/BTS/${decodedResult.decodedText}`,
+        axios.patch(`https://openhousewebapi.azurewebsites.net/api/BTS/${decodedResult.decodedText}`,
         { headers: { 'Content-Type': 'application/json'}, }   
             ).then((response) => {
             console.log(response.data);

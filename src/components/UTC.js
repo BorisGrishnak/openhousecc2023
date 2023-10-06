@@ -49,7 +49,7 @@ class UTC extends Component {
     
     onNewScanResult(decodedText, decodedResult) {
         console.log(decodedResult.decodedText);
-        axios.patch(`https://localhost:7001/api/UTC/${decodedResult.decodedText}`,
+        axios.patch(`https://openhousewebapi.azurewebsites.net/api/UTC/${decodedResult.decodedText}`,
         { headers: { 'Content-Type': 'application/json'}, }   
             ).then((response) => {
             console.log(response.data);
