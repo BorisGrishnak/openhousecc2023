@@ -17,7 +17,7 @@ export default function Beranda() {
 
   useEffect(() => {
     axios
-      .get(`https://localhost:7001/api/Register/Getbyid/${location.state.idcheck}`)
+      .get(`https://openhousewebapi.azurewebsites.net/api/Register/Getbyid/${location.state.idcheck}`)
       .then((result) => {
         setExpose(result.data.expose)
         setForce(result.data.force)

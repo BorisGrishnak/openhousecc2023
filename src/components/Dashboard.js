@@ -16,7 +16,7 @@ export default function Dashboard() {
 
   React.useEffect(() => {
     const fetchData = () =>{
-     axios.get('https://localhost:7001/api/Admin').then(postData => {
+     axios.get('https://openhousewebapi.azurewebsites.net/api/Admin').then(postData => {
 
      // reshaping the array
      const customHeadings = postData.data.map(item=>({
