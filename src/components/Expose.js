@@ -28,7 +28,7 @@ class Expose extends Component {
                   <div className="qrdiv text-center ms-3">
                     <Html5QrcodePlugin 
                       fps={10}
-                      qrbox={100}
+                      qrbox={150}
                       disableFlip={false}
                       qrCodeSuccessCallback={this.onNewScanResult}
                     />
@@ -49,7 +49,7 @@ class Expose extends Component {
     
     onNewScanResult(decodedText, decodedResult) {
         console.log(decodedResult.decodedText);
-        axios.patch(`https://openhousewebapi.azurewebsites.net/api/UpdateStation/${decodedResult.decodedText}`,
+        axios.patch(`https://localhost:7001/api/UpdateStation/${decodedResult.decodedText}`,
         { headers: { 'Content-Type': 'application/json'}, }   
             ).then((response) => {
             console.log(response.data);

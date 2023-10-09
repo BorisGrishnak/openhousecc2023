@@ -3,6 +3,7 @@ import { Card, Button, Table } from "react-bootstrap";
 import {ExportExcel} from "./ExportToExcel";
 import HeaderDesktop from "./HeaderDesktop";
 import axios from "axios";  
+import dateFormat, { masks } from "dateformat";
 
 export default function Dashboard() {
 
@@ -15,7 +16,7 @@ export default function Dashboard() {
 
   React.useEffect(() => {
     const fetchData = () =>{
-     axios.get('https://openhousewebapi.azurewebsites.net/api/Admin').then(postData => {
+     axios.get('https://localhost:7001/api/Admin').then(postData => {
 
      // reshaping the array
      const customHeadings = postData.data.map(item=>({
@@ -27,14 +28,13 @@ export default function Dashboard() {
        "Force": item.force,
        "BTS": item.bts,
        "UTC": item.utCall,
-      //  "CreatedAt": item.createdAt,
+       "CreatedAt": item.createdAt,
      }))
      const xlsxData = postData.data.map(item=>({
        "idPengunjung": item.idPengunjung,
        "Nama": item.nama,
        "NoHP": item.noHP,
        "Kantor": item.kantor
-      //  "CreatedAt": item.createdAt,
      }))
      setData(customHeadings) 
      setXlsxData(xlsxData) 
@@ -55,7 +55,11 @@ export default function Dashboard() {
 
   const doneData = doneDataRaw.length;
 
-  console.log(doneData);
+  const wee = data.map((png) => png.CreatedAt );
+
+  const woo = current.getFullYear();
+
+  console.log(woo);
 
   return (
     <>
