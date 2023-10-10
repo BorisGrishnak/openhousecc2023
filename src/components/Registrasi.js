@@ -112,6 +112,11 @@ export default function Registrasi() {
               </Button>
             </div>
           </Form>
+            <Link to="/expose">
+              <Button id="btnReg" type="button">
+                  Pindah
+              </Button>
+            </Link>
           </Card.Body>
         </Card>
         </div>
