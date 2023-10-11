@@ -25,6 +25,9 @@ export default function Registrasi() {
     e.preventDefault()
     try {
     axios.post('https://openhousewebapi.azurewebsites.net/api/Register', {
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      },
             IdPengunjung: "",
             Pengunjung: {
               "nama": Nama,
