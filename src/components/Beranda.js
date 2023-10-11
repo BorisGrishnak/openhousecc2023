@@ -45,10 +45,9 @@ export default function Beranda() {
                 )}
                 
                 {/* <img src={QRCodeSample} style={{width: 250}}></img> */}
-                <h4 className="mt-3" style={{backgroundColor: '#D9D9D9'}}>UID : {location.state.id}</h4>
             </div>
             <div className="TextData text-center" >
-                <h2 style={{backgroundColor: '#D9D9D9'}}>Nama : {location.state.nama}</h2>
+                <h2 style={{backgroundColor: '#D9D9D9'}}>{location.state.nama} {location.state.jabatan} dari {location.state.kantor}</h2>
             </div>
             <div className="station">
                 <div className="row">

@@ -8,6 +8,7 @@ export default function Registrasi() {
   
   const navigate = useNavigate();
   const [Nama, setNama] = useState('')
+  const [Jabatan, setJabatan] = useState('')
   const [NoHP, setNoHP] = useState('')
   const [Kantor, setKantor] = useState('')
   const IdPengunjung = '';
@@ -28,6 +29,7 @@ export default function Registrasi() {
             IdPengunjung: "",
             Pengunjung: {
               "nama": Nama,
+              "jabatan": Jabatan,
               "noHP": NoHP,
               "kantor": Kantor
             },
@@ -47,6 +49,8 @@ export default function Registrasi() {
           idcheck: response.data.idCheckpoint,
           id : response.data.idPengunjung,
           nama : Nama,
+          jabatan : Jabatan,
+          kantor : Kantor,
           expose : response.data.expose,
           force : response.data.force      
         }
@@ -84,6 +88,16 @@ export default function Registrasi() {
                 type="text"
                 placeholder="Nama lengkap"
               />
+              <Form.Label className="mt-3">Jabatan</Form.Label>
+              <Form.Control
+                id="formreg"
+                required
+                name="Jabatan"
+                value={Jabatan}
+                onChange={e => setJabatan(e.target.value)}
+                type="text"
+                placeholder="Jabatan"
+              />
               <Form.Label className="mt-3">No. Handphone</Form.Label>
               <Form.Control
                 id="formreg"
@@ -94,7 +108,7 @@ export default function Registrasi() {
                 type="number"
                 placeholder="No. Handphone"
               />
-              <Form.Label className="mt-3">Site/Cabang/Divisi</Form.Label>
+              <Form.Label className="mt-3">Site/Cabang/Divisi/Perusahaan</Form.Label>
               <Form.Control
                 id="formreg"
                 required
@@ -102,7 +116,7 @@ export default function Registrasi() {
                 value={Kantor}
                 onChange={e => setKantor(e.target.value)}
                 type="text"
-                placeholder="Site/Cabang/Divisi"
+                placeholder="Site/Cabang/Divisi/Perusahaan"
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
