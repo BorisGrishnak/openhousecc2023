@@ -4,7 +4,7 @@ import './index.css';
 import App from './components/App';
 import "bootstrap/dist/css/bootstrap.min.css";
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
