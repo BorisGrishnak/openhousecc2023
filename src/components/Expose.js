@@ -50,7 +50,7 @@ class Expose extends Component {
     onNewScanResult(decodedText, decodedResult) {
         console.log(decodedResult.decodedText);
         axios.patch(`https://openhousewebapi.azurewebsites.net/api/UpdateStation/${decodedResult.decodedText}`,
-        { headers: { 'Content-Type': 'application/json'}, }   
+        { headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'} }   
             ).then((response) => {
             console.log(response.data);
         }).catch((error) => {
