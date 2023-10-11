@@ -24,10 +24,12 @@ export default function Registrasi() {
     // Prevent the default submit and page reload
     e.preventDefault()
     try {
-    axios.post('https://openhousewebapi.azurewebsites.net/api/Register', {
+    axios.post('https://openhousewebapi.azurewebsites.net/api/Register',
+    {
       headers: {
-        "Access-Control-Allow-Origin": "*"
-      },
+      "Access-Control-Allow-Origin": "*"
+    }
+  }, {
             IdPengunjung: "",
             Pengunjung: {
               "nama": Nama,
