@@ -16,16 +16,23 @@ export default function Beranda() {
   const location = useLocation();
 
   useEffect(() => {
-    axios
-      .get(`https://openhousewebapi.azurewebsites.net/api/Register/Getbyid/${location.state.idcheck}`)
+    window.addEventListener('popstate', (e) => {
+      window.history.go(1);
+    });
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      axios.get(`https://openhousewebapi.azurewebsites.net/api/Register/Getbyid/${location.state.idcheck}`)
       .then((result) => {
         setExpose(result.data.expose)
         setForce(result.data.force)
         setBTS(result.data.bts)
         setUTC(result.data.utCall)
-        // console.log(result.data);
       })
       .catch((error) => console.log(error));
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   // console.log(Expose)
