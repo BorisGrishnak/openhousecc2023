@@ -85,11 +85,12 @@
 
 /* Dashboard */
 .dashboard {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('../assets/bilo.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: center;
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /* /Dashboard */
 
