@@ -61,8 +61,7 @@ export default function Registrasi() {
     }).catch((err) => {
       Swal.fire({  
         title: 'Failed',  
-        type: 'danger',  
-        icon: 'danger',  
+        type: 'danger',
         text: err.response.data,
       });  
     });
