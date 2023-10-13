@@ -24,6 +24,7 @@ export default function Dashboard() {
        "idPengunjung": item.idPengunjung,
        "Nama": item.nama,
        "NoHP": item.noHP,
+       "Jabatan": item.jabatan,
        "Kantor": item.kantor,
        "Expose": item.expose,
        "Force": item.force,
@@ -35,6 +36,7 @@ export default function Dashboard() {
        "idPengunjung": item.idPengunjung,
        "Nama": item.nama,
        "NoHP": item.noHP,
+       "Jabatan": item.jabatan,
        "Kantor": item.kantor
      }))
      setData(customHeadings) 
@@ -129,6 +131,7 @@ export default function Dashboard() {
                           <td>{png.Nama}</td>
                           <td>{png.NoHP}</td>
                           <td>{png.Kantor}</td>
+                          <td>{png.Jabatan}</td>
                           <td style={{backgroundColor: "#FDCD04"}}></td>
                           <td>
                             {(function() {
