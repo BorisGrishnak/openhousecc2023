@@ -3,6 +3,7 @@ import Header from "./Header";
 import { Button, Card, Form } from 'react-bootstrap';
 import { Link, redirect, useNavigate } from 'react-router-dom';
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Registrasi() {
   
@@ -57,6 +58,13 @@ export default function Registrasi() {
       });
       // window.location = "/beranda"  
       
+    }).catch((err) => {
+      Swal.fire({  
+        title: 'Failed',  
+        type: 'danger',  
+        icon: 'danger',  
+        text: err.response.data,
+      });  
     });
     } catch (error) {
       console.log({error});
