@@ -132,7 +132,6 @@ export default function Dashboard() {
                           <td>{png.NoHP}</td>
                           <td>{png.Kantor}</td>
                           <td>{png.Jabatan}</td>
-                          <td style={{backgroundColor: "#FDCD04"}}></td>
                           <td>
                             {(function() {
                               if (png.Expose === true) {
