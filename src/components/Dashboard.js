@@ -58,7 +58,7 @@ export default function Dashboard() {
 
   const doneData = doneDataRaw.length;
 
-  const wee = data.map((png) => png.CreatedAt == isToday );
+  const wee = data.map((png) => png.CreatedAt == isToday() );
 
   const woo = current.getFullYear();
 
