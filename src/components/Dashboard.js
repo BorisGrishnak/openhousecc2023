@@ -117,7 +117,7 @@ export default function Dashboard() {
                         <th style={{backgroundColor: "#FDCD04"}}>Nama</th>
                         <th style={{backgroundColor: "#FDCD04"}}>No.HP</th>
                         <th style={{backgroundColor: "#FDCD04"}}>Site/Cabang/Divisi</th>
-                        <th style={{backgroundColor: "#FDCD04"}}></th>
+                        <th style={{backgroundColor: "#FDCD04"}}>Jabatan</th>
                         <th style={{backgroundColor: "#FDCD04"}}>Expose</th>
                         <th style={{backgroundColor: "#FDCD04"}}>Force</th>
                         <th style={{backgroundColor: "#FDCD04"}}>BTS</th>
