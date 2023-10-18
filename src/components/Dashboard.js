@@ -37,7 +37,11 @@ export default function Dashboard() {
        "Nama": item.nama,
        "NoHP": item.noHP,
        "Jabatan": item.jabatan,
-       "Kantor": item.kantor
+       "Kantor": item.kantor,
+       "Expose": item.expose,
+       "Force": item.force,
+       "BTS": item.bts,
+       "UTC": item.utCall,
      }))
      setData(customHeadings) 
      setXlsxData(xlsxData) 
