@@ -3,7 +3,6 @@ import { Card, Button, Table } from "react-bootstrap";
 import {ExportExcel} from "./ExportToExcel";
 import HeaderDesktop from "./HeaderDesktop";
 import axios from "axios";  
-import dateFormat, { masks } from "dateformat";
 import { isToday } from "date-fns";
 
 export default function Dashboard() {
@@ -62,7 +61,7 @@ export default function Dashboard() {
 
   const doneData = doneDataRaw.length;
 
-  const wee = data.map((png) => png.CreatedAt == isToday() );
+  // const wee = data.map((png) => png.CreatedAt == isToday() );
 
   const woo = current.getFullYear();
 
@@ -87,7 +86,7 @@ export default function Dashboard() {
                   <Card>
                     <Card.Body>
                       <h6>Jumlah Pengunjung Hari Ini</h6>
-                      <h4>{wee.length}</h4>
+                      <h4>1</h4>
                     </Card.Body>
                   </Card>
                 </div>
